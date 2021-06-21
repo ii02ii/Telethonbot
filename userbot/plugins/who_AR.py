@@ -20,7 +20,10 @@ async def who(event):
     try:
         photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
-        await edit_or_reply(cat, "ان اسم المستخدم هذا اما غير صالح او يعود الى قناة ولا يمكن جلب معلومات القناة انا 👾 .")
+        await edit_or_reply(
+            cat,
+            "ان اسم المستخدم هذا اما غير صالح او يعود الى قناة ولا يمكن جلب معلومات القناة انا 👾 .",
+        )
         return
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
