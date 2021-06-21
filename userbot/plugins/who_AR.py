@@ -10,8 +10,8 @@ from telethon.utils import get_input_location
 TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 
 
-@bot.on(admin_cmd(pattern="who(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="who(?: |$)(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="who(?: |$)"))
+@bot.on(sudo_cmd(pattern="who(?: |$)", allow_sudo=True))
 async def who(event):
     cat = await edit_or_reply(event, "𖠕")
     if not os.path.isdir(TMP_DOWNLOAD_DIRECTORY):
@@ -20,7 +20,7 @@ async def who(event):
     try:
         photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
-        await edit_or_reply(cat, "لايمكنني العثور ع المستخدم")
+        await edit_or_reply(cat, "ان اسم المستخدم هذا اما غير صالح او يعود الى قناة ولا يمكن جلب معلومات القناة انا 👾 .")
         return
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
@@ -121,8 +121,8 @@ async def fetch_info(replied_user, event):
     return photo, caption
 
 
-@bot.on(admin_cmd(pattern="رابط الحساب(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="رابط الحساب(?: |$)(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="رابط الحساب(?: |$)"))
+@bot.on(sudo_cmd(pattern="رابط الحساب(?: |$)", allow_sudo=True))
 async def permalink(mention):
     """For .link command, generates a link to the user's PM with a custom text."""
     user, custom = await get_user_from_event(mention)
