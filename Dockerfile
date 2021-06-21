@@ -1,7 +1,7 @@
-FROM ii02ii/Telethon:latest
+FROM ii02ii/f:latest
 
 #clonning repo 
-RUN git clone https://github.com/ii02ii/Telethon.git /root/userbot
+RUN git clone https://github.com/ii02ii/f.git /root/userbot
 #working directory 
 WORKDIR /root/userbot
 
