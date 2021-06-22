@@ -1,2 +1,2 @@
-# klanr ali
-# Arabs - Telethon
+# Memian
+# Saqt - Telethon
