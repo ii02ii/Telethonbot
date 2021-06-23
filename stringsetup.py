@@ -1,21 +1,15 @@
-#!/usr/bin/env python3
-# (c) https://t.me/TelethonChat/37677
-# This Source Code Form is subject to the terms of the GNU
-# General Public License, v.3.0. If a copy of the GPL was not distributed with this
-# file, You can obtain one at https://www.gnu.org/licenses/gpl-3.0.en.html.
-
 from telethon.sessions import StringSession
 from telethon.sync import TelegramClient
 
-print(
-    """Please go-to my.telegram.org
-Login using your Telegram account
-Click on API Development Tools
-Create a new application, by entering the required details"""
-)
-APP_ID = int(input("من فضلك ادخل معرف التطبيق :"))
-API_HASH = input("من فضلك ادخل الـ API_HASH :")
+print("اليك 3 متطلبات لتنصيب بوت تليثون العرب (باللغة العربية):\n\n١- معرف التطبيق (APP_ID)\n٢- ايبي الدخول للتطبييق (API_HASH)\n\nتستطيع الحصول عليهما من خلال my.telegram.org\nاو من خلال البوت @scrapmanbot\n٣- رقم الهاتف (ادخله مع مفتاح الدولة مثلًا العراق +964)\n")
+print("Telethon For Arabs 🤖 : http://T.ME/OORRR")
+
+APP_ID = int(input(": من فضلك قم بأدخال معرف التطبيق (APP_ID)\n"))
+API_HASH = input(": من فضلك قم بأدخال ايبي الدخول للتطبييق (API_HASH)\n")
 
 with TelegramClient(StringSession(), APP_ID, API_HASH) as client:
     print(client.session.save())
     client.send_message("me", client.session.save())
+
+
+#Edit and convert it to Arabic file by :
